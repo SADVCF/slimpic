@@ -64,7 +64,7 @@ function handleFiles(files) {
   );
 
   if (valid.length === 0) {
-    alert('Please upload JPEG, PNG, or WebP images.');
+    alert('Por favor sube imágenes en formato JPEG, PNG o WebP.');
     return;
   }
 
@@ -104,7 +104,7 @@ compressBtn.addEventListener('click', async () => {
   const quality = parseInt(qualitySlider.value) / 100;
 
   compressBtn.disabled = true;
-  compressBtn.textContent = '⏳ Compressing…';
+  compressBtn.textContent = '⏳ Comprimiendo…';
   results = [];
 
   let totalOrigBytes = 0;
@@ -172,7 +172,7 @@ compressBtn.addEventListener('click', async () => {
   if (results.length > 1) downloadAllBtn.hidden = false;
 
   compressBtn.disabled = false;
-  compressBtn.textContent = '⚡ Compress All';
+  compressBtn.textContent = '⚡ Comprimir Todo';
 });
 
 // ── Reset ───────────────────────────────────────
@@ -191,7 +191,7 @@ downloadAllBtn.addEventListener('click', async () => {
   if (results.length === 0) return;
 
   downloadAllBtn.disabled = true;
-  downloadAllBtn.textContent = '⏳ Zipping…';
+  downloadAllBtn.textContent = '⏳ Comprimiendo ZIP…';
 
   const zip = new JSZip();
 
@@ -205,7 +205,7 @@ downloadAllBtn.addEventListener('click', async () => {
   triggerDownload(blob, 'slimpic_compressed.zip');
 
   downloadAllBtn.disabled = false;
-  downloadAllBtn.textContent = '⬇ Download All (.zip)';
+  downloadAllBtn.textContent = '⬇ Descargar Todo (.zip)';
 });
 
 // ── Build card DOM ──────────────────────────────
