@@ -29,10 +29,9 @@ qualitySlider.addEventListener('input', () => {
 });
 
 // ── Drop zone interactions ──────────────────────
-dropZone.addEventListener('click', e => {
-  if (e.target.closest('label')) return;
-  fileInput.click();
-});
+document.querySelector('label[for="fileInput"]').addEventListener('click', e => e.stopPropagation());
+
+dropZone.addEventListener('click', () => fileInput.click());
 dropZone.addEventListener('keydown', e => {
   if (e.key === 'Enter' || e.key === ' ') fileInput.click();
 });
